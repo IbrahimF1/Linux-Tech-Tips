@@ -1,5 +1,15 @@
 # Linux Tech Tips
 
+## Fixing Crackling Audio
+
+1) Navigate to `/usr/share/pipewire/pipewire-pulse.conf`
+2) Find `pulse.min.quantum      = 128/48000     # 2.7ms`
+3) Change `128/48000` to `256/48000` or `512/48000`
+4) Restart PipeWire
+```bash
+systemctl --user restart wireplumber pipewire pipewire-pulse
+```
+
 ## Adding Blue Light Filter
 
 1) Install Redshift
