@@ -1,5 +1,47 @@
 # Linux Tech Tips
 
+## Enabling zswap
+
+1) Check if swap exists:
+```bash
+free -h
+```
+2) Check if kernel has zswap (Should see `CONFIG_ZSWAP=y`):
+```bash
+cat /boot/config-$(uname -r) | grep -i zswap
+```
+3) Edit zswap GRUB config `sudo nano /etc/default/grub`:
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=50 zswap.zpool=zsmalloc
+```
+4) Apply changes:
+```bash
+sudo update-grub
+``` 
+5) Add compressor to boot
+```bash
+sudo su
+```
+```bash
+echo lz4 >> /etc/initramfs-tools/modules
+```
+```bash
+echo lz4_compress >> /etc/initramfs-tools/modules
+```
+```bash
+update-initramfs -u
+```
+```bash
+exit
+```
+
+6) Reboot
+
+7) Check if zswap is enabled:
+```bash
+grep -r . /sys/module/zswap/parameters
+```
+
 ## Fixing Crackling Audio
 
 1) Navigate to `/usr/share/pipewire/pipewire-pulse.conf`
