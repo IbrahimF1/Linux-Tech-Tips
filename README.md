@@ -1,5 +1,20 @@
 # Linux Tech Tips
 
+## Limiting Memory
+**Note**
+- Modify `MemoryMax` to limit amount of memory
+- Change `brave-browser` to your chosen app
+
+### Single Session
+```bash
+systemd-run --user --scope -p MemoryMax=4G brave-browser
+```
+
+### Permanent
+```bash
+systemd-run --user --scope -p MemoryMax=4G brave-browser %U
+```
+
 ## Enabling zswap
 
 1) Check if swap exists:
