@@ -7,12 +7,12 @@
 
 ### Single Session
 ```bash
-systemd-run --user --scope -p MemoryMax=4G brave-browser
+systemd-run --user --scope -p MemoryMax=6G brave-browser
 ```
 
 ### Permanent
 ```bash
-systemd-run --user --scope -p MemoryMax=4G brave-browser %U
+systemd-run --user --scope -p MemoryMax=6G brave-browser %U
 ```
 
 ## Enabling zswap
