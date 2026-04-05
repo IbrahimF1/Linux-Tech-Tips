@@ -1,5 +1,15 @@
 # Linux Tech Tips
 
+## Choose Default Monitor for VSync
+1) Identify connected monitors
+```bash
+xrandr -q
+```
+2) Set default monitor in environment variables (Replace DP-0 with chosen monitor)
+```bash
+export __GL_SYNC_DISPLAY_DEVICE=DP-0
+```
+
 ## Limiting Memory
 **Note**
 - Modify `MemoryMax` to limit amount of memory
