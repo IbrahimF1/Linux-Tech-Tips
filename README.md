@@ -1,5 +1,25 @@
 # Linux Tech Tips
 
+## Changing Boot Mode
+
+### Setting Multi-User (Text Only) Mode as Default
+```bash
+sudo systemctl set-default multi-user.target
+```
+
+### Setting Graphical Mode as Default
+```bash
+sudo systemctl set-default graphical.target
+```
+
+### Booting into Graphical Mode from Multi-User Mode
+```bash
+sudo systemctl isolate graphical.target
+```
+```bash
+sudo systemctl start gdm3
+```
+
 ## Choose Default Monitor for VSync
 1) Identify connected monitors
 ```bash
@@ -128,4 +148,35 @@ gamemoded -t
 4) Add to game launch options in Steam
 ```
 gamemoderun %command%
+```
+# Terminal Dev Tips
+
+## [tmux](https://github.com/tmux/tmux/wiki)
+
+### Creating New Window
+`Ctrl` + `B` then `C`
+
+### Navigating to Specific Window
+`Ctrl` + `B` then `0` / `1` / `2` / `3`
+
+### Kill Window
+`Ctrl` + `B` then `&`
+
+### Split Window Horizontal
+`Ctrl` + `B` then `"`
+
+### Split Window Vertical
+`Ctrl` + `B` then `%`
+
+### Navigating Window Panes
+`Ctrl` + `B` then `→` / `↓` / `↑` / `←`
+
+### Kill Window Pane
+`Ctrl` + `B` then `X`
+
+## [fresh](https://getfresh.dev/docs/)
+
+### Open IDE at Specific Folder
+```bash
+fresh your/folder/location/here
 ```
