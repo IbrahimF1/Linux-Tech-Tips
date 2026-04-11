@@ -180,3 +180,20 @@ gamemoderun %command%
 ```bash
 fresh your/folder/location/here
 ```
+
+## [Browsh](https://github.com/browsh-org/browsh)
+
+**IMPORTANT**: Install Firefox
+```bash
+sudo apt install firefox
+```
+
+### Running Browsh
+```bash
+browsh
+```
+
+### Text Only Responses
+```bash
+curl --header "X-Browsh-Raw-Mode: PLAIN" localhost:4333/https://google.com
+```
