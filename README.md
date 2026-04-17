@@ -149,9 +149,51 @@ gamemoded -t
 ```
 gamemoderun %command%
 ```
+
+
+
+
 # Terminal Dev Tips
 
-## [tmux](https://github.com/tmux/tmux/wiki)
+## [kmscon](https://github.com/kmscon/kmscon) - upgrading Linux virtual console
+
+### Install [libtsm](https://github.com/kmscon/libtsm)
+1) Download zip from Releases
+2) Extract zip
+3) Enter libtsm folder
+4) Run the following in the libtsm folder:
+```bash
+meson setup -Dtests=false build
+```
+```bash
+cd build
+```
+```bash
+meson compile
+```
+```bash
+meson install
+```
+
+### Install systemd-dev to install the systemd service files in the right location
+```bash
+sudo apt install systemd-dev
+```
+
+### Install [kmscon](https://github.com/kmscon/kmscon)
+1) Download zip from Releases
+2) Extract zip
+3) Enter kmscon folder
+4) Run the following in the kmscon folder:
+```bash
+meson setup builddir/
+```
+```bash
+meson install -C builddir/
+```
+**NOTE**: If any missing dependencies show up when installing kmscon, install the appropriate package for your system.
+
+## [tmux](https://github.com/tmux/tmux/wiki) - terminal window splits
 
 ### Creating New Window
 `Ctrl` + `B` then `C`
@@ -183,10 +225,7 @@ fresh your/folder/location/here
 
 ## [Browsh](https://github.com/browsh-org/browsh)
 
-**IMPORTANT**: Install Firefox
-```bash
-sudo apt install firefox
-```
+**IMPORTANT**: [Install Firefox](https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04)
 
 ### Running Browsh
 ```bash
