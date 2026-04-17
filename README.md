@@ -152,7 +152,6 @@ gamemoderun %command%
 
 
 
-
 # Terminal Dev Tips
 
 ## [kmscon](https://github.com/kmscon/kmscon) - upgrading Linux virtual console
@@ -192,6 +191,11 @@ meson setup builddir/
 meson install -C builddir/
 ```
 **NOTE**: If any missing dependencies show up when installing kmscon, install the appropriate package for your system.
+
+5) Enabling kmscon:
+```bash
+sudo systemctl enable kmsconvt@tty1.service
+```
 
 ## [tmux](https://github.com/tmux/tmux/wiki) - terminal window splits
 
