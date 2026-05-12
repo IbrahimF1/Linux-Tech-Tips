@@ -1,5 +1,7 @@
 # Linux Tech Tips
 
+https://www.youtube.com/watch?v=t-n095tzz-U
+
 ## Changing Boot Mode
 
 ### Setting Multi-User (Text Only) Mode as Default
