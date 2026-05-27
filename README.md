@@ -156,6 +156,33 @@ gamemoderun %command%
 
 # Terminal Dev Tips
 
+## Common Commands
+
+### Start Server and Forward with ngrok
+```bash
+python3 -m http.server 8000 & ngrok http 8000
+```
+
+### Killing Process on Specific Port
+```bash
+lsof -ti :8000 | xargs kill
+```
+
+### Launching OpenCode Server
+```bash
+opencode serve --hostname 0.0.0.0 --port 4096
+```
+
+### Launching OpenCode Server with Username and Passowrd
+```bash
+OPENCODE_SERVER_USERNAME=your-username OPENCODE_SERVER_PASSWORD=your-password opencode serve --hostname 0.0.0.0 --port 4096
+```
+
+### Attaching a OpenCode CLI to OpenCode Server
+```bash
+opencode attach http://localhost:4096
+```
+
 ## [kmscon](https://github.com/kmscon/kmscon) - upgrading Linux virtual console
 
 ### Install [libtsm](https://github.com/kmscon/libtsm)
